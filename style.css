@@ -1,0 +1,569 @@
+
+:root {
+    --green: #174d36;
+    --orange: #f47b45;
+    --cream: #fffaf2;
+    --text: #24342c;
+    --muted: #758078;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button, input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    width: min(1160px, 90%);
+    margin-inline: auto;
+}
+
+.header {
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-bottom: 1px solid #eee7dc;
+}
+
+.navbar {
+    min-height: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--green);
+    white-space: nowrap;
+}
+
+.logo span,
+.hero h1 span {
+    color: var(--orange);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 0.94rem;
+}
+
+.nav-links a:hover {
+    color: var(--orange);
+}
+
+.nav-links .nav-button,
+.primary-button {
+    background: var(--green);
+    color: var(--white);
+    padding: 12px 20px;
+    border-radius: 9px;
+    font-weight: 700;
+}
+
+.nav-links .nav-button:hover,
+.primary-button:hover {
+    background: #236749;
+    color: white;
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: var(--green);
+    font-size: 1.7rem;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 55px;
+    align-items: center;
+    padding-block: 75px 90px;
+}
+
+.eyebrow {
+    display: inline-block;
+    color: var(--orange);
+    font-size: 0.77rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    margin-bottom: 17px;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 4.5vw, 4.2rem);
+    line-height: 1.12;
+    letter-spacing: -2px;
+    color: var(--green);
+}
+
+.hero-content > p {
+    margin-top: 22px;
+    color: var(--muted);
+    max-width: 460px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 28px;
+}
+
+.primary-button {
+    display: inline-block;
+}
+
+.secondary-button {
+    font-weight: 700;
+    color: var(--green);
+    padding: 12px 5px;
+}
+
+.hero-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.hero-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-stats strong {
+    font-size: 1.2rem;
+    color: var(--green);
+}
+
+.hero-stats small {
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image > img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 28px;
+}
+
+.floating-card {
+    position: absolute;
+    left: -20px;
+    bottom: 25px;
+    background: white;
+    padding: 17px 22px;
+    border-radius: 13px;
+    box-shadow: 0 12px 35px #173f2c20;
+    display: flex;
+    flex-direction: column;
+}
+
+.floating-card span {
+    font-weight: 800;
+}
+
+.floating-card small {
+    color: var(--muted);
+}
+
+.menu-section {
+    padding-block: 85px;
+    background: #ffffff;
+}
+
+.section-heading {
+    text-align: center;
+}
+
+.section-heading h2,
+.about-section h2,
+.offer-box h2 {
+    color: var(--green);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.2;
+}
+
+.section-heading p {
+    margin-top: 10px;
+    color: var(--muted);
+}
+
+.menu-tools {
+    margin-block: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.menu-tools input {
+    width: min(340px, 100%);
+    padding: 13px 16px;
+    border: 1px solid #e1e6e1;
+    border-radius: 9px;
+    outline-color: var(--green);
+}
+
+.filters {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter {
+    border: 1px solid #e2e6df;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 30px;
+    color: var(--text);
+}
+
+.filter.active,
+.filter:hover {
+    background: var(--green);
+    color: white;
+    border-color: var(--green);
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.food-card {
+    border: 1px solid #eeeae2;
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px #193c2512;
+}
+
+.food-card > img {
+    width: 100%;
+    height: 225px;
+    object-fit: cover;
+}
+
+.food-info {
+    padding: 20px;
+}
+
+.food-title {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.food-title h3 {
+    font-size: 1.02rem;
+    color: var(--green);
+}
+
+.food-title span {
+    white-space: nowrap;
+    font-size: 0.82rem;
+}
+
+.food-info p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-top: 10px;
+    min-height: 48px;
+}
+
+.food-bottom {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.food-bottom strong {
+    font-size: 1.3rem;
+    color: var(--green);
+}
+
+.add-button {
+    width: 39px;
+    height: 39px;
+    border: none;
+    border-radius: 10px;
+    background: var(--orange);
+    color: white;
+    font-size: 1.5rem;
+}
+
+.add-button:hover {
+    background: #d9612d;
+}
+
+.empty-message {
+    padding: 30px;
+    text-align: center;
+    color: var(--muted);
+}
+
+.offer-section {
+    padding-block: 70px;
+}
+
+.offer-box {
+    padding: 45px;
+    background: #eaf1e7;
+    border-radius: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.offer-box .eyebrow {
+    margin-bottom: 10px;
+}
+
+.offer-box p {
+    margin-top: 10px;
+    color: var(--muted);
+}
+
+.offer-button {
+    flex-shrink: 0;
+    background: var(--orange);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 9px;
+    font-weight: 700;
+}
+
+.about-section {
+    text-align: center;
+    padding-block: 50px 90px;
+}
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 38px;
+}
+
+.benefits > div {
+    background: white;
+    border: 1px solid #eeeae2;
+    padding: 28px 20px;
+    border-radius: 15px;
+}
+
+.benefits > div > span {
+    font-size: 2rem;
+}
+
+.benefits h3 {
+    margin-top: 12px;
+    color: var(--green);
+}
+
+.benefits p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.92rem;
+}
+
+.footer {
+    background: var(--green);
+    color: white;
+    padding-block: 30px;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.footer .logo {
+    color: white;
+}
+
+.footer .logo span {
+    color: var(--orange);
+}
+
+.footer p {
+    font-size: 0.85rem;
+    color: #d9e4db;
+}
+
+.toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    max-width: calc(100% - 50px);
+    padding: 14px 20px;
+    border-radius: 10px;
+    background: var(--green);
+    color: white;
+    box-shadow: 0 8px 30px #0002;
+    opacity: 0;
+    transform: translateY(15px);
+    pointer-events: none;
+    transition: 0.25s;
+    z-index: 20;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 850px) {
+    .hero {
+        gap: 30px;
+    }
+
+    .hero-image > img {
+        height: 350px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .food-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .navbar {
+        min-height: 70px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        padding: 20px 5%;
+        border-bottom: 1px solid #eee7dc;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links .nav-button {
+        text-align: center;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-block: 50px 65px;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .hero-image > img {
+        height: 320px;
+    }
+
+    .floating-card {
+        left: 12px;
+        bottom: 12px;
+    }
+
+    .hero-stats {
+        gap: 20px;
+    }
+
+    .menu-section {
+        padding-block: 60px;
+    }
+
+    .food-grid,
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .food-card > img {
+        height: 240px;
+    }
+
+    .offer-box {
+        padding: 28px 22px;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
